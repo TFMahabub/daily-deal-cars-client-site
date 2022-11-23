@@ -6,11 +6,11 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        doctortheme: {
+        dailydealcarsheme: {
         
-          primary: "#0FCFEC",
+          primary: "#6150FC",
                   
-          secondary: "#19D3AE",
+          secondary: "#6150FC",
                   
           accent: "#3A4256",
           

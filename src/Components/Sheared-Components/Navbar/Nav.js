@@ -29,7 +29,7 @@ const Nav = () => {
     } */}
   </>
   return (
-    <nav className='bg-slate-300'>
+    <nav className=''>
       <div className="navbar container mx-auto md:flex justify-between">
         <div className="">
           <div className="dropdown">
