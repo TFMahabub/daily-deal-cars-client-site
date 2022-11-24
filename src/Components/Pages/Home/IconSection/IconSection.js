@@ -3,7 +3,7 @@ import { SiTesla, SiHonda, SiBmw, SiVolvo, SiMazda, SiMini, SiToyota, SiKia } fr
 
 const IconSection = () => {
   return (
-    <div className='container mx-auto flex items-center justify-between'>
+    <div className='container hidden mx-auto lg:flex items-center justify-between'>
       <SiTesla className='text-5xl opacity-30' />
       <SiHonda className='text-5xl opacity-30' />
       <SiBmw className='text-5xl opacity-30' />

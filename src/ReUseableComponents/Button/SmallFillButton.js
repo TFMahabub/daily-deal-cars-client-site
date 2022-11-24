@@ -2,7 +2,7 @@ import React from 'react';
 
 const SmallFillButton = ({children}) => {
   return (
-    <button className="rounded-sm bg-primary py-[11px] px-6 text-[#fff] border-0">{children}</button>
+    <button className="rounded-sm bg-primary py-[9px] px-6 text-lg tracking-wide text-[#fff] border-0">{children}</button>
   );
 };
 

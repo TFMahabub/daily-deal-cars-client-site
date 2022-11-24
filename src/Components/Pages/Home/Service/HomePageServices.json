@@ -1,0 +1,32 @@
+[
+  {
+    "brand": "tesla",
+    "name": "Model 3",
+    "original_price": "$62,990",
+    "resale_price": "$40,000",
+    "years_of_use": "1.5 years",
+    "location": "Chicago",
+    "img": "https://i.ibb.co/3MymF4Z/model-3.jpg",
+    "discription": "All-electric vehicles, also referred to as battery electric vehicles (BEVs), have an electric motor instead of an internal combustion engine."
+  },
+  {
+    "brand": "tesla",
+    "name": "Model X",
+    "original_price": "$114,990",
+    "resale_price": "$100,000",
+    "years_of_use": "2 years",
+    "location": "New York City",
+    "img": "https://i.ibb.co/TczsgP2/model-X.jpg",
+    "discription": "Luxury cars often use higher-quality interior materials and have features that aren't available on lower-priced models — engines, transmissions, sound systems, telematics, safety features"
+  },
+  {
+    "brand": "tesla",
+    "name": "Model Y",
+    "original_price": "$64,990",
+    "resale_price": "$50,000",
+    "years_of_use": "1 year",
+    "location": "Texas",
+    "img": "https://i.ibb.co/h7rzjXB/model-Y.jpg",
+    "discription": "A minibus, microbus, minicoach, or commuter (in Zimbabwe) is a passenger-carrying motor vehicle that is designed to carry more people than a multi-purpose vehicle or minivan, but fewer people than a full-size bus."
+  }
+]

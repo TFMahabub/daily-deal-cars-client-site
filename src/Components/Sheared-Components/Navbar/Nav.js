@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Nav = () => {
 
-  const user = 'user';
+  const { user, logOut } = useContext(AuthContext)
+
+  console.log(user);
 
 
-
-  // const handleSingOut = () =>{
-  //   logOut()
-  //   .then(()=>{
-  //     alert('logOut successfully')
-  //   })
-  //   .catch(err=>console.error(err))
-  // }
+  const handleLogOut = () =>{
+    logOut()
+    .then(()=>{
+      alert('logOut successfully')
+    })
+    .catch(err=>console.error(err))
+  }
 
 
   const menus = 
@@ -21,12 +23,12 @@ const Nav = () => {
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/about'>About</Link></li>
     <li><Link to='/contact_us'>Contact Us</Link></li>
-    {/* {
+    {
       user?.uid?
-      <li className='lg:hidden block'><button onClick={handleSingOut}>SignOut</button></li>
+      <li className=''><button onClick={handleLogOut}>SignOut</button></li>
       :
       <li><Link to='/login'>Login</Link></li>
-    } */}
+    }
   </>
   return (
     <nav className=''>
