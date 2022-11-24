@@ -5,7 +5,7 @@ import FullWidthButton from '../../../ReUseableComponents/Button/FullWidthButton
 import toast from 'react-hot-toast';
 
 const Register = () => {
-  const { logInWithGoogle, register, updateUser } = useContext(AuthContext)
+  const { user, logInWithGoogle, register, updateUser, loading } = useContext(AuthContext)
 
 
   const handleOnSubmit = e =>{
@@ -15,6 +15,13 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const userCategory = form.userCategory.value;
+
+    const userPosition = {
+      name,
+      email,
+      userCategory
+    }
 
     register(email, password)
     .then((result)=>{
@@ -22,6 +29,13 @@ const Register = () => {
       updateUser(name)
       .then(()=>{
         toast.success('Register Successfully')
+        fetch('http://localhost:5000/user', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(userPosition)
+        })
       })
       .catch(err=>{
         console.error(err)
@@ -37,14 +51,31 @@ const Register = () => {
 
   const handleLoginWithGoogle = () =>{
     logInWithGoogle()
-    .then(()=>{
+    .then((result)=>{
+      fetchFunction(result.user.displayName, result.user.email, 'user')
       toast.success('Login successfully')
     })
     .catch(err=>{
       console.error(err)
       toast.error('Something went wrong :(')
-    })
+    })  
   }
+
+  const fetchFunction = (name, email, userPosition) =>{
+    const user = {
+      name,
+      email,
+      userPosition
+    }
+    fetch('http://localhost:5000/user', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify(user)
+            })
+  }
+        
   return (
     <section className="lg:h-[90vh] mt-14 lg:mt-0 px-2 lg:px-0 lg:flex lg:justify-center lg:items-center">
       <div className="border-2 border-secondary shadow-2xl rounded-lg p-4">
@@ -85,8 +116,14 @@ const Register = () => {
               required
             />
           </div>
-
-          <FullWidthButton type="submit">Login</FullWidthButton>
+          <div>
+          <label className="block dark:text-gray-400">Select user category</label>
+            <select name="userCategory" id="" className='w-full ring-gray-400 ring-1 mb-4 px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400'>
+              <option value="user">User</option>
+              <option value="seller">Seller</option>
+            </select>
+          </div>
+          <FullWidthButton type="submit">Register</FullWidthButton>
         </form>
 
         <div className="flex items-center pt-4 space-x-1">

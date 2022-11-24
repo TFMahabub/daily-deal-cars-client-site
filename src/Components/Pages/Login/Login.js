@@ -14,6 +14,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    const userCategory = form.userCategory.value;
 
     logIn(email, password)
     .then(()=>{
@@ -65,7 +66,7 @@ const Login = () => {
               className="w-full ring-gray-400 ring-1 mb-4 px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
             />
           </div>
-
+          
           <FullWidthButton type="submit">Login</FullWidthButton >
         </form>
 
