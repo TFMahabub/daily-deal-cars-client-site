@@ -1,10 +1,45 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../../../Contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 import FullWidthButton from '../../../../ReUseableComponents/Button/FullWidthButton';
 
-const BookingModal = ({user, selectedItem}) => {
+const BookingModal = ({user, selectedItem, setOpenModal}) => {
   
-  console.log(selectedItem);
+  
+  
+
+  const handleOnSubmit = e =>{
+    e.preventDefault()
+
+    const form = e.target;
+    const selectedItemName = selectedItem.name;
+    const userName = form.modalUserName.value;
+    const userEmail = form.modalUserEmail.value;
+    const reSellPrice = form.modalUserResellPrice.value;
+    const phone = form.modalUserPhone.value;
+    const meetingLocation = form.modalUserMeetingLocation.value;
+
+    const booking = {
+      selectedItemName,
+      userName,
+      userEmail,
+      reSellPrice,
+      phone,
+      meetingLocation
+    }
+    fetch('http://localhost:5000/booking', {
+      method: 'POST',
+      headers: {
+        'content-type' : 'application/json'
+      },
+      body: JSON.stringify(booking)
+    })
+    .then(()=>{
+      toast.success('Booking successfully')
+      setOpenModal(false)
+    })
+    .catch(err=>console.error(err))
+    
+  }
 
   return (
     <section>
@@ -12,7 +47,7 @@ const BookingModal = ({user, selectedItem}) => {
       <div className="modal">
         <div className="modal-box relative">
           <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute bg-primary right-2 top-2">✕</label>
-          <form action="">
+          <form onSubmit={handleOnSubmit}>
           
 
           <label className="block dark:text-gray-400 text-primary text-2xl font-semibold mb-1">{selectedItem.name}</label>
@@ -22,7 +57,7 @@ const BookingModal = ({user, selectedItem}) => {
               type="text"
               name='modalUserName'
               disabled
-              value={user.displayName}
+              defaultValue={user.displayName}
               className="input input-bordered w-full"
             />
             </div>
@@ -32,7 +67,7 @@ const BookingModal = ({user, selectedItem}) => {
               type="email"
               name='modalUserEmail'
               disabled
-              value={user.email}
+              defaultValue={user.email}
               className="input input-bordered w-full"
             />
             </div>
@@ -43,7 +78,7 @@ const BookingModal = ({user, selectedItem}) => {
               type="text"
               name='modalUserResellPrice'
               disabled
-              value={selectedItem.resale_price}
+              defaultValue={selectedItem.resale_price}
               className="input input-bordered w-full"
             />
             </div>

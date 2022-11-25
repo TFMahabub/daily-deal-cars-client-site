@@ -41,6 +41,7 @@ const Product = () => {
         <BookingModal 
         user={user}
         selectedItem={selectedItem}
+        setOpenModal={setOpenModal}
         >
         </BookingModal>
       }
