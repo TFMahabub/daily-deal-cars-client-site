@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import FullWidthButton from '../../../ReUseableComponents/Button/FullWidthButton';
 import toast from 'react-hot-toast';
 
 const Login = () => {
   const { logIn, logInWithGoogle } = useContext(AuthContext)
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
 
 
   const handleOnSubmit = e =>{
@@ -14,11 +18,11 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const userCategory = form.userCategory.value;
 
     logIn(email, password)
     .then(()=>{
       toast.success('Login successfully')
+      navigate(from, { replace: true });
     })
     .catch(err=>{
       console.error(err)
@@ -30,6 +34,7 @@ const Login = () => {
     logInWithGoogle()
     .then(()=>{
       toast.success('Login successfully')
+      navigate(from, { replace: true });
     })
     .catch(err=>{
       console.error(err)

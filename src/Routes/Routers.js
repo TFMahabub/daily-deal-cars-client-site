@@ -4,6 +4,7 @@ import Login from "../Components/Pages/Login/Login";
 import Product from "../Components/Pages/ProductPage/Product";
 import Register from "../Components/Pages/Register/Register";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
+import PrivateRoute from "./PrivateRoute";
 
 const routers = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const routers = createBrowserRouter([
       },
       {
         path: '/categories/:id',
-        element: <Product></Product>
+        element: <PrivateRoute><Product></Product></PrivateRoute>
       },
     ]
   }

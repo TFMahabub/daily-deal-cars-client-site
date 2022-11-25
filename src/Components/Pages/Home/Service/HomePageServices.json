@@ -1,32 +1,119 @@
 [
   {
+    "categories_id": 1,
     "brand": "tesla",
     "name": "Model 3",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
     "original_price": "$62,990",
     "resale_price": "$40,000",
     "years_of_use": "1.5 years",
     "location": "Chicago",
-    "img": "https://i.ibb.co/3MymF4Z/model-3.jpg",
-    "discription": "All-electric vehicles, also referred to as battery electric vehicles (BEVs), have an electric motor instead of an internal combustion engine."
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/3MymF4Z/model-3.jpg"
   },
   {
+    "categories_id": 1,
     "brand": "tesla",
     "name": "Model X",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
     "original_price": "$114,990",
     "resale_price": "$100,000",
     "years_of_use": "2 years",
     "location": "New York City",
-    "img": "https://i.ibb.co/TczsgP2/model-X.jpg",
-    "discription": "Luxury cars often use higher-quality interior materials and have features that aren't available on lower-priced models — engines, transmissions, sound systems, telematics, safety features"
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/TczsgP2/model-X.jpg"
   },
   {
+    "categories_id": 1,
     "brand": "tesla",
     "name": "Model Y",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
     "original_price": "$64,990",
     "resale_price": "$50,000",
     "years_of_use": "1 year",
     "location": "Texas",
-    "img": "https://i.ibb.co/h7rzjXB/model-Y.jpg",
-    "discription": "A minibus, microbus, minicoach, or commuter (in Zimbabwe) is a passenger-carrying motor vehicle that is designed to carry more people than a multi-purpose vehicle or minivan, but fewer people than a full-size bus."
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/h7rzjXB/model-Y.jpg"
+  },
+  {
+    "categories_id": 2,
+    "brand": "Rolls-Royce",
+    "name": "Phantom",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$460,000",
+    "resale_price": "$350,000",
+    "years_of_use": "1.2 year",
+    "location": "Michigan",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/7CdsTCL/Phantom.jpg"
+  },
+  {
+    "categories_id": 2,
+    "brand": "Rolls-Royce",
+    "name": "Silver Cloud",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$102,850",
+    "resale_price": "$80,000",
+    "years_of_use": "1.2 year",
+    "location": "Georgia",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/jkBZRFv/ROOLLS-ROYCE-SILVER-CLOUD.jpg"
+  },
+  {
+    "categories_id": 2,
+    "brand": "Rolls-Royce",
+    "name": "Mansory",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$549,996",
+    "resale_price": "$400,000",
+    "years_of_use": "1.4 year",
+    "location": "Virginia",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/YQVMmnV/Wraith-Mansory.jpg"
+  },
+  {
+    "categories_id": 3,
+    "brand": "Nexotrans",
+    "name": "Nexotrans 2011",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$80,996",
+    "resale_price": "$60,000",
+    "years_of_use": "2 year",
+    "location": "Georgia",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/PtDTWwZ/Nexotrans.jpg"
+  },
+  {
+    "categories_id": 3,
+    "brand": "Volkswagen",
+    "name": "Volkswagen 3022",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$90,996",
+    "resale_price": "$70,000",
+    "years_of_use": "2 year",
+    "location": "Michigan",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/JRbS7zT/Volkswagen-Microbus.jpg"
+  },
+  {
+    "categories_id": 3,
+    "brand": "Volkswagen",
+    "name": "Transporter",
+    "seller_name": "Mahabub Alam",
+    "verification": "verified",
+    "original_price": "$80,996",
+    "resale_price": "$50,000",
+    "years_of_use": "2 year",
+    "location": "Michigan",
+    "post_time": "7:11 p.m",
+    "img": "https://i.ibb.co/sqZFpML/Transporter-56-Years-Last-Edition.jpg"
   }
 ]
