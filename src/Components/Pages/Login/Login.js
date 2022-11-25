@@ -32,8 +32,9 @@ const Login = () => {
 
   const handleLoginWithGoogle = () =>{
     logInWithGoogle()
-    .then(()=>{
+    .then((result)=>{
       toast.success('Login successfully')
+      fetchFunction(result.user.displayName, result.user.email, 'buyer')
       navigate(from, { replace: true });
     })
     .catch(err=>{
@@ -41,6 +42,21 @@ const Login = () => {
       toast.error('Something went wrong :(')
     })
   }
+
+  const fetchFunction = (name, email, userCategory) =>{
+    const user = {
+      name,
+      email,
+      userCategory
+    }
+    fetch('http://localhost:5000/user', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify(user)
+            })
+    }
 
   return (
     <section className="lg:h-[90vh] mt-14 lg:mt-0 px-2 lg:px-0 lg:flex lg:justify-center lg:items-center">

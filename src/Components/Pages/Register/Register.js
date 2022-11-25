@@ -65,7 +65,7 @@ const Register = () => {
               },
               body: JSON.stringify(user)
             })
-  }
+    }
         
   return (
     <section className="lg:h-[90vh] mt-14 lg:mt-0 px-2 lg:px-0 lg:flex lg:justify-center lg:items-center">

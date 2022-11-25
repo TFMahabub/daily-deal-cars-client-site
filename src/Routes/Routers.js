@@ -4,6 +4,7 @@ import Home from "../Components/Pages/Home/Home";
 import Login from "../Components/Pages/Login/Login";
 import Product from "../Components/Pages/ProductPage/Product";
 import Register from "../Components/Pages/Register/Register";
+import ErrorPage from "../Components/Sheared-Components/ErrorPage/ErrorPage";
 import DashboardLayout from "../Layouts/Dashboard/DashboardLayout";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
 import PrivateRoute from "./PrivateRoute";
@@ -29,6 +30,10 @@ const routers = createBrowserRouter([
         path: '/categories/:id',
         element: <PrivateRoute><Product></Product></PrivateRoute>
       },
+      {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
+      }
       
     ]
   },
@@ -39,6 +44,10 @@ const routers = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Admin></Admin>
+      },
+      {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
       }
     ]
   },

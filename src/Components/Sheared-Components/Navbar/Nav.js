@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import logo from '../../../Assets/logo.png'
+import toast from 'react-hot-toast';
 
 const Nav = () => {
 
@@ -13,7 +14,7 @@ const Nav = () => {
   const handleLogOut = () =>{
     logOut()
     .then(()=>{
-      alert('logOut successfully')
+      toast.success('Logout user')
     })
     .catch(err=>console.error(err))
   }
