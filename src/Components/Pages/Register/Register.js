@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import FullWidthButton from '../../../ReUseableComponents/Button/FullWidthButton';
 import toast from 'react-hot-toast';
 
 const Register = () => {
-  const { user, logInWithGoogle, register, updateUser, loading } = useContext(AuthContext)
+  const { logInWithGoogle, register, updateUser, loading } = useContext(AuthContext)
 
 
+  const navigate = useNavigate()
   const handleOnSubmit = e =>{
     e.preventDefault()
 
@@ -17,25 +18,15 @@ const Register = () => {
     const password = form.password.value;
     const userCategory = form.userCategory.value;
 
-    const userPosition = {
-      name,
-      email,
-      userCategory
-    }
-
     register(email, password)
     .then((result)=>{
       console.log(result.user);
       updateUser(name)
       .then(()=>{
         toast.success('Register Successfully')
-        fetch('http://localhost:5000/user', {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(userPosition)
-        })
+        fetchFunction(name, email, userCategory)
+        form.reset()
+        navigate('/')
       })
       .catch(err=>{
         console.error(err)
@@ -52,7 +43,7 @@ const Register = () => {
   const handleLoginWithGoogle = () =>{
     logInWithGoogle()
     .then((result)=>{
-      fetchFunction(result.user.displayName, result.user.email, 'user')
+      fetchFunction(result.user.displayName, result.user.email, 'buyer')
       toast.success('Login successfully')
     })
     .catch(err=>{
@@ -61,11 +52,11 @@ const Register = () => {
     })  
   }
 
-  const fetchFunction = (name, email, userPosition) =>{
+  const fetchFunction = (name, email, userCategory) =>{
     const user = {
       name,
       email,
-      userPosition
+      userCategory
     }
     fetch('http://localhost:5000/user', {
               method: 'POST',
@@ -119,7 +110,7 @@ const Register = () => {
           <div>
           <label className="block dark:text-gray-400">Select user category</label>
             <select name="userCategory" id="" className='w-full ring-gray-400 ring-1 mb-4 px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400'>
-              <option value="user">User</option>
+              <option value="buyer">Buyer</option>
               <option value="seller">Seller</option>
             </select>
           </div>

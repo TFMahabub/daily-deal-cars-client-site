@@ -7,7 +7,7 @@ import SingleCart from './SingleCart';
 
 const Product = () => {
   const { user, loading } = useContext(AuthContext)
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(null)
   const [selectedItem, setSelectedItem] = useState('')
   //get params query:
   const { id } = useParams()
@@ -32,6 +32,7 @@ const Product = () => {
           <SingleCart 
             key={product._id}
             product={product}
+            setOpenModal={setOpenModal}
             setSelectedItem={setSelectedItem}
           />
           )

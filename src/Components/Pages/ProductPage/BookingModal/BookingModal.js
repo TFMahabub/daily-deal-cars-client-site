@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import FullWidthButton from '../../../../ReUseableComponents/Button/FullWidthButton';
 
-const BookingModal = ({user, selectedItem, setOpenModal}) => {
+const BookingModal = ({user, selectedItem, setOpenModal,}) => {
   
   
   
@@ -10,6 +10,7 @@ const BookingModal = ({user, selectedItem, setOpenModal}) => {
   const handleOnSubmit = e =>{
     e.preventDefault()
 
+    
     const form = e.target;
     const selectedItemName = selectedItem.name;
     const userName = form.modalUserName.value;
@@ -35,6 +36,7 @@ const BookingModal = ({user, selectedItem, setOpenModal}) => {
     })
     .then(()=>{
       toast.success('Booking successfully')
+      form.reset()
       setOpenModal(false)
     })
     .catch(err=>console.error(err))
@@ -43,10 +45,10 @@ const BookingModal = ({user, selectedItem, setOpenModal}) => {
 
   return (
     <section>
-      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <input type="checkbox" id="Booking-Modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
-          <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute bg-primary right-2 top-2">✕</label>
+          <label htmlFor="Booking-Modal" className="btn btn-sm btn-circle absolute bg-primary right-2 top-2">✕</label>
           <form onSubmit={handleOnSubmit}>
           
 

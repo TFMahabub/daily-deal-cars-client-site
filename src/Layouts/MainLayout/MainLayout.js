@@ -6,8 +6,10 @@ import Nav from '../../Components/Sheared-Components/Navbar/Nav';
 const MainLayout = () => {
   return (
     <div className='max-w-[1440px] mx-auto'>
-      <Nav></Nav>
-      <Outlet></Outlet>
+      <div className='lg:px-14'>
+        <Nav></Nav>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );

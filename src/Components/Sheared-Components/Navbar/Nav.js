@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import logo from '../../../Assets/logo.png'
 
 const Nav = () => {
 
@@ -21,18 +22,19 @@ const Nav = () => {
   const menus = 
   <>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/about'>About</Link></li>
-    <li><Link to='/contact_us'>Contact Us</Link></li>
     {
       user?.uid?
-      <li className=''><button onClick={handleLogOut}>SignOut</button></li>
+      <>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li className=''><button onClick={handleLogOut}>LogOut</button></li>
+      </>
       :
       <li><Link to='/login'>Login</Link></li>
     }
   </>
   return (
     <nav className=''>
-      <div className="navbar container mx-auto md:flex justify-between">
+      <div className="navbar container p-0 mx-auto md:flex justify-between">
         <div className="">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,7 +44,7 @@ const Nav = () => {
               {menus}
             </ul>
           </div>
-          <Link to='/' className="normal-case text-xl">Daily Deal Cars</Link>
+          <Link to='/'><img className='w-[110px]' src={logo} alt="" /></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu tracking-wide font-medium menu-horizontal p-0">
