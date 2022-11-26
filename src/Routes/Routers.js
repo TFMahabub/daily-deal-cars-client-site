@@ -3,6 +3,7 @@ import Admin from "../Components/Pages/Dashboard/Admin/Admin";
 import AddAProduct from "../Components/Pages/Dashboard/RightSide.js/Pages/AddAProduct/AddAProduct";
 import MyBuyers from "../Components/Pages/Dashboard/RightSide.js/Pages/MyBuyers/MyBuyers";
 import MyProducts from "../Components/Pages/Dashboard/RightSide.js/Pages/MyProducts/MyProducts";
+import WellCome from "../Components/Pages/Dashboard/RightSide.js/Pages/WellCome/WellCome";
 import Home from "../Components/Pages/Home/Home";
 import Login from "../Components/Pages/Login/Login";
 import Product from "../Components/Pages/ProductPage/Product";
@@ -48,6 +49,10 @@ const routers = createBrowserRouter([
         path: '/dashboard',
         element: <Admin></Admin>,
         children: [
+          {
+            path: '/dashboard/',
+            element: <WellCome></WellCome>
+          },
           {
             path: '/dashboard/add_a_product',
             element: <AddAProduct></AddAProduct>

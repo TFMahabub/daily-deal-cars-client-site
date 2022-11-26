@@ -2,18 +2,21 @@ import React, { useContext } from 'react';
 import { DashboardContext } from '../../../../../../Contexts/AuthProvider/Dashboard/DashboardProvider';
 import FullWidthButton from '../../../../../../ReUseableComponents/Button/FullWidthButton';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const AddProductForm = () => {
   const { dbUsers } = useContext(DashboardContext)
+  const navigate = useNavigate()
 
   const handleOnSubmit = e =>{
     e.preventDefault()
 
     const form = e.target;
-    const userCategory = parseInt(form.userCategory.value);
+    const categories_id = parseInt(form.userCategory.value);
     const brand = form.brandName.value;
     const name = form.modelName.value;
     const seller_name = dbUsers.name;
+    const seller_email = dbUsers.email;
     const verification = 'not verified';
     const original_price = `$${form.original_price.value}`;
     const resale_price = `$${form.resale_price.value}`;
@@ -23,10 +26,11 @@ const AddProductForm = () => {
     const img = form.img.value;
 
     const product = {
-      userCategory,
+      categories_id,
       brand,
       name,
       seller_name,
+      seller_email,
       verification,
       original_price,
       resale_price,
@@ -34,7 +38,7 @@ const AddProductForm = () => {
       location,
       img
     }
-    
+
     fetch('http://localhost:5000/categories', {
       method: 'POST',
       headers: {
@@ -46,14 +50,16 @@ const AddProductForm = () => {
       if(result.status === 200){
         toast.success('Product added successfully')
         form.reset()
+        navigate('/dashboard/my_products')
       }
       console.log(result)
     })
     
   }
   return (
-    <section className='p-10'>
-      <form onSubmit={handleOnSubmit} >
+    <section className='px-10'>
+      <h2 className='text-center text-2xl font-semibold text-primary'>Post your Product</h2>
+      <form onSubmit={handleOnSubmit} className='mt-7'>
           <div className="grid grid-cols-1 gap-4 lg:gap-x-28 lg:grid-cols-2">
           <div>
             <label className="block dark:text-gray-400">Select user category</label>

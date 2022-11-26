@@ -8,7 +8,7 @@ const Admin = ({dbUsers}) => {
 
   return (
     <section className='lg:col-span-5'>
-      <div className='grid grid-cols-1 lg:grid-cols-7'>
+      <div className='grid grid-cols-1 lg:grid-cols-7 lg:h-[90vh]'>
         <LeftSide></LeftSide>
         <Outlet></Outlet>
       </div>
