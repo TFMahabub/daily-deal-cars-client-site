@@ -20,7 +20,6 @@ const Register = () => {
 
     register(email, password)
     .then((result)=>{
-      console.log(result.user);
       updateUser(name)
       .then(()=>{
         toast.success('Register Successfully')

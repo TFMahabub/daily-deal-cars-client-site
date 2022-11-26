@@ -10,7 +10,7 @@ const HomeService = () => {
     queryKey: ['services'],
     queryFn: async()=>{
       const res = await fetch('https://daily-deal-cars-server-site.vercel.app/services')
-      const data = res.json()
+      const data = await res.json()
       return data;
     }
   })

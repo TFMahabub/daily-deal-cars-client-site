@@ -43,7 +43,7 @@ const routers = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <Admin></Admin>
+        element: <PrivateRoute><Admin></Admin></PrivateRoute>
       },
       {
         path: '*',
