@@ -36,10 +36,10 @@ const LeftSide = () => {
         dbUsers?.userCategory === 'admin' &&
         <>
           <Link to='/dashboard/all_sellers'>
-            <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center bg-slate-200'>All Sellers</h4>
+            <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center'>All Sellers</h4>
           </Link>
           <Link to='/dashboard/all_buyers'>
-            <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center bg-slate-200'>All Buyers</h4>
+            <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center'>All Buyers</h4>
           </Link>
         </>
       }

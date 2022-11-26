@@ -152,7 +152,7 @@ const AddProductForm = () => {
             </div>
           </div>
           
-          <FullWidthButton type="submit" extraClass={'mt-5'}>Login</FullWidthButton >
+          <FullWidthButton type="submit" extraClass={'mt-5'}>Post</FullWidthButton >
         </form>
     </section>
   );

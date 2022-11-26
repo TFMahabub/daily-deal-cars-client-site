@@ -1,8 +1,21 @@
 import React from 'react';
 
 const SingleProduct = ({myPr, refetch}) => {
-  const { brand, name, resale_price, img } = myPr;
+  const { brand, name, resale_price, img, _id } = myPr;
   
+
+  const handleDelete = id =>{
+   
+    if(window.confirm("Do you want to delete the Product?") === true){
+      fetch(`http://localhost:5000/categories/${id}`, {
+        method: "DELETE"
+      })
+      .then(res=> {
+        refetch()
+      })
+      .catch(err=>console.error(err))
+    }
+  }
   return (
     <tr>
       <th>
@@ -30,7 +43,7 @@ const SingleProduct = ({myPr, refetch}) => {
       </td>
       <td><button className='bg-primary text-white px-3 py-1 rounded-lg tracking-wide duration-150 hover:bg-[#5543f8]'>Advertise</button></td>
       <th>
-        <button className="px-3 py-1 font-normal rounded-lg bg-red-200 hover:bg-red-500 duration-150 hover:text-white">Delete</button>
+        <button onClick={()=>handleDelete(_id)} className="px-3 py-1 font-normal rounded-lg bg-red-200 hover:bg-red-500 duration-150 hover:text-white">Delete</button>
       </th>
     </tr>
   );

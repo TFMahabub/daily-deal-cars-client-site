@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import Spinner from '../../Sheared-Components/Spinner/Spinner';
 import BookingModal from './BookingModal/BookingModal';
 import SingleCart from './SingleCart';
 
@@ -24,7 +25,7 @@ const Product = () => {
     <section>
       {
         isLoading?
-      <p>loading...</p>
+      <Spinner></Spinner>
       :
       <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5 lg:gap-8'>
       {
