@@ -12,7 +12,9 @@ const BookingModal = ({user, selectedItem, setOpenModal,}) => {
 
     
     const form = e.target;
-    const selectedItemName = selectedItem.name;
+    const modelName = selectedItem.name;
+    const BrandName = selectedItem.brand;
+    const selectedItemImg = selectedItem.img;
     const userName = form.modalUserName.value;
     const userEmail = form.modalUserEmail.value;
     const reSellPrice = form.modalUserResellPrice.value;
@@ -20,14 +22,16 @@ const BookingModal = ({user, selectedItem, setOpenModal,}) => {
     const meetingLocation = form.modalUserMeetingLocation.value;
 
     const booking = {
-      selectedItemName,
+      modelName,
+      BrandName,
       userName,
       userEmail,
       reSellPrice,
+      selectedItemImg,
       phone,
       meetingLocation
     }
-    fetch('http://localhost:5000/booking', {
+    fetch('https://daily-deal-cars-server-site.vercel.app/booking', {
       method: 'POST',
       headers: {
         'content-type' : 'application/json'

@@ -1,14 +1,23 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext } from 'react';
 import { HiBadgeCheck } from "react-icons/hi";
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
 
   const { categories_id, brand, name, seller_name, verification, original_price,
-          resale_price, years_of_use, location, post_time, img } = product;
-
-
-
-
+    resale_price, years_of_use, location, post_time, img } = product;
+    
+    //get user from mongoDB Atlas-
+    const {user} = useContext(AuthContext)
+  const { data: dbUsers = [] } = useQuery({
+    queryKey: ['dbUsers'],
+    queryFn: async () => {
+        const res = await fetch(`https://daily-deal-cars-server-site.vercel.app/user?email=${user.email}`);
+        const data = await res.json();
+        return data
+    }
+  });
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
@@ -16,7 +25,7 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <div className='flex justify-between items-center text-[16px] mt-1'>
-          <h3 className='flex items-center'>Seller Name: <span className='text-primary'>{seller_name}</span><HiBadgeCheck className='text-xl ml-1 text-primary'/></h3>
+          <h3 className='flex items-center'>Seller Name: <span className='text-primary'>{seller_name}</span>{dbUsers?.verification==='verified' && <HiBadgeCheck className='text-xl ml-1 text-primary'/>}</h3>
           <h3>Post at: <span className='text-primary'>{post_time}</span></h3>
         </div>
         <div className='flex justify-between items-center text-[16px]'>
@@ -28,15 +37,15 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
           <h3>Resell Price <span className='text-primary'>{resale_price}</span></h3>
         </div>
 
-
-
-
-
-
           <label 
           onClick={()=>{
             setOpenModal('open')
-            setSelectedItem({name, resale_price})
+            setSelectedItem({
+              name, 
+              resale_price, 
+              img,
+              brand
+            })
           }}
           htmlFor="Booking-Modal" 
           className='btn border-0 mt-3 cursor-pointer bg-primary py-[9px] w-full rounded-md text-lg tracking-wide text-[#fff]'

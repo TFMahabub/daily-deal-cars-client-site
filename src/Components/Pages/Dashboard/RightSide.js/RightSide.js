@@ -5,7 +5,7 @@ const RightSide = () => {
   const { dbUsers } = useContext(DashboardContext)
   console.log(dbUsers);
   return (
-    <div className='bg-red-400 lg:col-span-5'>
+    <div className='bg-red-400 lg:col-span-4'>
       <h2>Right</h2>
     </div>
   );

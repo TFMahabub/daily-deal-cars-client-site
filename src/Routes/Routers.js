@@ -5,6 +5,7 @@ import AddAProduct from "../Components/Pages/Dashboard/RightSide.js/Pages/AddAPr
 import AllBuyers from "../Components/Pages/Dashboard/RightSide.js/Pages/AllBuyers/AllBuyers";
 import AllSellers from "../Components/Pages/Dashboard/RightSide.js/Pages/AllSeller/AllSellers";
 import MyBuyers from "../Components/Pages/Dashboard/RightSide.js/Pages/MyBuyers/MyBuyers";
+import MyOrders from "../Components/Pages/Dashboard/RightSide.js/Pages/MyOrders/MyOrders";
 import MyProducts from "../Components/Pages/Dashboard/RightSide.js/Pages/MyProducts/MyProducts";
 import WellCome from "../Components/Pages/Dashboard/RightSide.js/Pages/WellCome/WellCome";
 import Home from "../Components/Pages/Home/Home";
@@ -42,6 +43,10 @@ const routers = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
+        path: '/payment',
+        element: <Blog></Blog>
+      },
+      {
         path: '*',
         element: <ErrorPage></ErrorPage>
       }
@@ -61,6 +66,10 @@ const routers = createBrowserRouter([
             element: <WellCome></WellCome>
           },
           {
+            path: '/dashboard/my_orders',
+            element: <MyOrders></MyOrders>
+          },
+          {
             path: '/dashboard/add_a_product',
             element: <AddAProduct></AddAProduct>
           },
@@ -74,7 +83,7 @@ const routers = createBrowserRouter([
           },
           {
             path: '/dashboard/all_buyers',
-            element: <AllBuyers></AllBuyers>
+            element: <AllBuyers> </AllBuyers>
           },
         ]
       },

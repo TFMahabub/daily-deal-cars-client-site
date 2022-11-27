@@ -10,7 +10,7 @@ const MyProducts = () => {
   const {data: myProducts = [], refetch} = useQuery({
     queryKey: ['myProducts'],
     queryFn: async()=>{
-      const res = await fetch(`http://localhost:5000/categories?email=${user.email}`)
+      const res = await fetch(`https://daily-deal-cars-server-site.vercel.app/categories?email=${user.email}`)
       const data = await res.json()
       return data;
     }
@@ -19,9 +19,8 @@ const MyProducts = () => {
   console.log(myProducts);
 
   return (
-    <div className='lg:col-span-5 '>
-     <h2 className='text-center text-2xl font-semibold text-primary'>My Product</h2>
-     <section className='mt-4'>
+    <div className='lg:col-span-4 '>
+     <section className=''>
 
 
      <div className="overflow-x-auto w-full">
@@ -29,15 +28,10 @@ const MyProducts = () => {
           {/* <!-- head --> */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Make Advertise</th>
-              <th></th>
+              <th className='bg-slate-100 rounded-none'>Products</th>
+              <th className='bg-slate-100 rounded-none'>Price</th>
+              <th className='bg-slate-100 rounded-none'>Make Advertise</th>
+              <th className='bg-slate-100 rounded-none'>Delete</th>
             </tr>
           </thead>
           <tbody>

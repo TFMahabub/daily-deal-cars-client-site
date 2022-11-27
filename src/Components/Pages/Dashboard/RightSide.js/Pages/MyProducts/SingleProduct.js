@@ -7,7 +7,7 @@ const SingleProduct = ({myPr, refetch}) => {
   const handleDelete = id =>{
    
     if(window.confirm("Do you want to delete the Product?") === true){
-      fetch(`http://localhost:5000/categories/${id}`, {
+      fetch(`https://daily-deal-cars-server-site.vercel.app/categories/${id}`, {
         method: "DELETE"
       })
       .then(res=> {
@@ -18,11 +18,6 @@ const SingleProduct = ({myPr, refetch}) => {
   }
   return (
     <tr>
-      <th>
-        <label>
-          <input type="checkbox" className="checkbox" />
-        </label>
-      </th>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">

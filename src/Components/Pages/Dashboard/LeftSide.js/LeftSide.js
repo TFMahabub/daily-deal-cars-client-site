@@ -8,7 +8,7 @@ const LeftSide = () => {
 
   console.log(dbUsers);
   return (
-    <div className='bg-slate-100 lg:col-span-2 p-7 text-xl font-semibold'>
+    <div className='bg-slate-100 lg:col-span-1 p-7 text-xl font-semibold'>
       {
         dbUsers?.userCategory === 'buyer' &&
         <>

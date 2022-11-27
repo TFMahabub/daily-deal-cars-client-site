@@ -55,9 +55,10 @@ const Register = () => {
     const user = {
       name,
       email,
+      verification: 'Not Verified',
       userCategory
     }
-    fetch('http://localhost:5000/user', {
+    fetch('https://daily-deal-cars-server-site.vercel.app/user', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

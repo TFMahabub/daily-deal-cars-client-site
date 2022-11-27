@@ -4,7 +4,7 @@ import AddProductForm from './AddProductForm';
 
 const AddAProduct = () => {
   return (
-    <div className='lg:col-span-5 '>
+    <div className='lg:col-span-4 '>
       <AddProductForm></AddProductForm>
     </div>
   );
