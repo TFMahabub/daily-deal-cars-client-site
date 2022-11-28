@@ -28,7 +28,7 @@ const Product = () => {
         isLoading?
       <Spinner></Spinner>
       :
-      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5 lg:gap-8'>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5 lg:gap-8 lg:gap-y-14'>
       {
         products.map(product=> 
           <SingleCart 
