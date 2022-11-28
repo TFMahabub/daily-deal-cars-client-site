@@ -4,7 +4,7 @@
 
 ### Features I used in this project: 
 - #### Home Page: 
-On the home page, you'll see the banner at the top. after that you can see some brand logos, then you can see the Categories section from this section if you select/click in any category you'll go to a new page and see all products under the selected categories. In all categories cards, you'll see BOOK NOW button if you click on it. you can see a modal with some information. fill up the form and click on the submit button you can book your product. Then you can see all the secured products from Dashboard.
+  On the home page, you'll see the banner at the top. after that you can see some brand logos, then you can see the Categories section from this section if you select/click in any category you'll go to a new page and see all products under the selected categories. In all categories cards, you'll see BOOK NOW button if you click on it. you can see a modal with some information. fill up the form and click on the submit button you can book your product. Then you can see all the secured products from Dashboard.
 
 - #### Blog Page: 
   On this page, you'll see some blogs with answers.
