@@ -27,6 +27,7 @@ const AllSellers = () => {
           {
             allSellers.map(seller=> 
             <SingleSeller
+              key={seller._id}
               seller = {seller}
               refetch={refetch}
             ></SingleSeller>)

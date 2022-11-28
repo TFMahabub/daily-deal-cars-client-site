@@ -2,7 +2,7 @@ import React from 'react';
 import deleteFetch from '../fetch/DeleteMethod';
 import toast from 'react-hot-toast';
 
-const SingleBuyers = ({buyer, refetch}) => {
+const SingleBuyers = ({buyer, setRefetchdata}) => {
   const { name, email, _id } = buyer;
 
   const handleDelete = id =>{
@@ -11,7 +11,7 @@ const SingleBuyers = ({buyer, refetch}) => {
       .then(res=>{
         if(res.status === 200){
           toast.error('Seller delete successfully')
-          refetch()
+          setRefetchdata(true)
         }
       })
       .catch(err=>console.error(err))
@@ -19,9 +19,9 @@ const SingleBuyers = ({buyer, refetch}) => {
   }
   return (
       <tr className=''>
-      <td className='font-semibold tracking-wide'>{name}</td>
-      <td className='tracking-wide'>{email}</td>
-      <button onClick={()=>handleDelete(_id)} className='px-4 py-1 bg-red-300 hover:bg-red-400 duration-150 m-4 rounded-lg'>Delete</button>
+        <td className='font-semibold tracking-wide'>{name}</td>
+        <td className='tracking-wide'>{email}</td>
+        <button onClick={()=>handleDelete(_id)} className='px-4 py-1 bg-red-300 hover:bg-red-400 duration-150 m-4 rounded-lg'>Delete</button>
     </tr>
   );
 };
