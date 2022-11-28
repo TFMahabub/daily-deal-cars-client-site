@@ -4,9 +4,8 @@ import { toast } from 'react-toastify';
 const SingleProduct = ({myPr, refetch}) => {
   const { brand, name, resale_price, img, _id, advertise } = myPr;
   
-  console.log(advertise);
   const handleAdvertise = id =>{
-    fetch(`http://localhost:5000/categories/${id}`, {
+    fetch(`https://daily-deal-cars-server-site.vercel.app/categories/${id}`, {
       method: 'PUT'
     })
     .then(res=>res.json())

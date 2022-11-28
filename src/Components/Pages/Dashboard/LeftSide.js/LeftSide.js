@@ -5,8 +5,6 @@ import { DashboardContext } from '../../../../Contexts/AuthProvider/Dashboard/Da
 const LeftSide = () => {
   const { dbUsers } = useContext(DashboardContext)
 
-
-  console.log(dbUsers);
   return (
     <div className='bg-slate-100 lg:col-span-1 p-7 text-xl font-semibold'>
       {

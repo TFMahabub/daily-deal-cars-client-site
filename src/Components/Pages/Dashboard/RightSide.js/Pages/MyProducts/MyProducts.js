@@ -16,7 +16,6 @@ const MyProducts = () => {
     }
   })
 
-  console.log(myProducts);
 
   return (
     <div className='lg:col-span-4 '>

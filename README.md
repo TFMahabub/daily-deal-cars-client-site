@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+## Daily Deal Cars
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live site: ](https://daily-deal-cars.web.app/)
 
-## Available Scripts
+###Features I used in this project: 
+####Home Page: In home page you'll see the banner in top. after that you can see some brand logo, then you can see Categories section from this section if you select/click in any category you'll go to a new page and see all product under the selected categories. In all categories card you'll see BOOK NOW button if you click on it. you can see a modal with some information. fill-up the form and click on the submit button you can book your product. Then you can see the all booked product form Dashboard.
 
-In the project directory, you can run:
+####Blog Page: In this page you'll see some blog with answer.
 
-### `npm start`
+####Dashboard: In this page you can see some deffirence between. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+like you're a seller you can see some option like: Add A Product, My Products, My Buyers.
+In Add a product route you can add a product with give all the informations. 
+In My Products route you can see your all added product, also you can delete any product to click on the delete button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+like if you're a buyer you can see My Orders route. 
+In this route you can see you're all orders from here
 
-### `npm test`
+like if you're a Admin you can see All Sellers, All Buyers, Reported Items route.
+In All Sellers route you can see all the seller logedin in your website. If you want you can delete any seller to clicking the delete button.
+In All Buyers route you can see all the buyers logedin in your website. If you want you can delete any buyers also by clicking the delete button.
+In Reported Items route you can see all the product who get reported from buyer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+####Navbar: In this navbar you can see Company logo in left side and the right side Home, Blog, Dashboard, LogOut, Login, with a profile pic menue.
+If you're logeding you can see Home, Blog, Dashboard, LogOut and avater.
+If you're not login in this website you can see Home, Blog and Login menues.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+####Footer: In this footer you can see the company logo. Also with some menue.

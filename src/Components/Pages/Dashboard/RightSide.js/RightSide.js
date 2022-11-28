@@ -3,7 +3,6 @@ import { DashboardContext } from '../../../../Contexts/AuthProvider/Dashboard/Da
 
 const RightSide = () => {
   const { dbUsers } = useContext(DashboardContext)
-  console.log(dbUsers);
   return (
     <div className='bg-red-400 lg:col-span-4'>
       <h2>Right</h2>

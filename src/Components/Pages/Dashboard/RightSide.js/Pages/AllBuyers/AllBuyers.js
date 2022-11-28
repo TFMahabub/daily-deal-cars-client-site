@@ -12,7 +12,6 @@ const AllBuyers = () => {
     }
 
   })
-  console.log(allBuyers);
   return (
       <section className="overflow-x-auto lg:col-span-4">
         <table className="table w-full">

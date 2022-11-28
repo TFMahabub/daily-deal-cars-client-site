@@ -9,7 +9,6 @@ const SingleBuyers = ({buyer, refetch}) => {
     if(window.confirm("Do you want to delete the User?") === true){
       deleteFetch(id)
       .then(res=>{
-        console.log(res)
         if(res.status === 200){
           toast.error('Seller delete successfully')
           refetch()

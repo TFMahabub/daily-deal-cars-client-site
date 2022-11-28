@@ -6,7 +6,7 @@ const SingleSeller = ({seller, refetch}) => {
   const { verification, name, email, _id } = seller;
 
   const handleVarified = id =>{
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://daily-deal-cars-server-site.vercel.app/user/${id}`, {
       method: 'PUT',
     })
     .then(res=>res.json())
@@ -15,7 +15,6 @@ const SingleSeller = ({seller, refetch}) => {
         toast.success('User verified')
         refetch()
       }
-      console.log(data)
     })
   }
 
@@ -23,7 +22,6 @@ const SingleSeller = ({seller, refetch}) => {
     if(window.confirm("Do you want to delete the User?") === true){
       deleteFetch(id)
       .then(res=>{
-        console.log(res)
         if(res.status === 200){
           toast.error('Seller delete successfully')
           refetch()

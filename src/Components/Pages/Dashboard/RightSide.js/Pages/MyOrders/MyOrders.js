@@ -29,7 +29,6 @@ const MyOrders = () => {
           refetch()
           toast.error('Item deleted')
         }
-        console.log(res);
       })
       .catch(err=>console.error(err))
     }
