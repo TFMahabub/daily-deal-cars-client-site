@@ -1,8 +1,25 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const SingleProduct = ({myPr, refetch}) => {
-  const { brand, name, resale_price, img, _id } = myPr;
+  const { brand, name, resale_price, img, _id, advertise } = myPr;
   
+  console.log(advertise);
+  const handleAdvertise = id =>{
+    fetch(`http://localhost:5000/categories/${id}`, {
+      method: 'PUT'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.acknowledged){
+        toast.success('Product Advertised')
+        refetch()
+      }
+      else{
+        toast.error('Somethig went wrong')
+      }
+    })
+  }
 
   const handleDelete = id =>{
    
@@ -36,7 +53,7 @@ const SingleProduct = ({myPr, refetch}) => {
         <br/>
         <span className="badge badge-ghost badge-sm">available</span>
       </td>
-      <td><button className='bg-primary text-white px-3 py-1 rounded-lg tracking-wide duration-150 hover:bg-[#5543f8]'>Advertise</button></td>
+      <td>{advertise? <h4>Product Already Advertise</h4> : <button onClick={()=>handleAdvertise(_id)} className='bg-primary text-white px-3 py-1 rounded-lg tracking-wide duration-150 hover:bg-[#5543f8]'>Advertise</button>}</td>
       <th>
         <button onClick={()=>handleDelete(_id)} className="px-3 py-1 font-normal rounded-lg bg-red-200 hover:bg-red-500 duration-150 hover:text-white">Delete</button>
       </th>

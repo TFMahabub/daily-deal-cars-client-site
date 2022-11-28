@@ -20,8 +20,8 @@ const HomeService = () => {
   }
 
   return (
-    <section className='px-2 lg:px-0 mt-[5rem] lg:mt-[150px]'>
-      <ServicesText></ServicesText>
+    <section id='homePageServices' className='px-2 lg:px-0 mt-[5rem] lg:mt-[150px]'>
+      <ServicesText top={'Categories'} bottom = {'Select your categories'}></ServicesText>
       <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5 lg:gap-8'>
         {
           services.map(service=> 

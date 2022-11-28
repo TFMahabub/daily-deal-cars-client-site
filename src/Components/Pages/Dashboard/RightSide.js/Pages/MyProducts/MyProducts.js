@@ -37,8 +37,9 @@ const MyProducts = () => {
           <tbody>
             {/* <!-- row 1 --> */}
             {
-              myProducts.map(myPr=> 
+              myProducts?.map(myPr=> 
               <SingleProduct
+              key={myPr._id}
                 myPr={myPr}
                 refetch={refetch}
               ></SingleProduct>)

@@ -1,17 +1,12 @@
 import React from 'react';
-import { HiBadgeCheck } from "react-icons/hi";
+import { HiBadgeCheck } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
-const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
-
+const SingleAdvertiseProduct = ({product}) => {
   const { categories_id, brand, name, seller_name, verification, original_price,
-          resale_price, years_of_use, location, post_time, img } = product;
-
-    
-
-
-
+    resale_price, years_of_use, location, post_time, img } = product;
   return (
-    <div className="card card-compact bg-base-100 shadow-xl">
+    <div className="card card-compact bg-base-100 shadow-xl mt-14">
       <figure><img src={img} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
@@ -22,24 +17,17 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
           <h3>Original Price: <span className='text-primary'>{original_price}</span></h3>
           <h3>Resell Price <span className='text-primary'>{resale_price}</span></h3>
 
-          <label 
-          onClick={()=>{
-            setOpenModal('open')
-            setSelectedItem({
-              name, 
-              resale_price, 
-              img,
-              brand
-            })
-          }}
-          htmlFor="Booking-Modal" 
-          className='btn border-0 mt-3 cursor-pointer bg-primary py-[9px] w-full rounded-md text-lg tracking-wide text-[#fff]'
-          >
-            Book Now
-          </label>
+          <Link to={`/categories/${categories_id}`}>
+            <label 
+            htmlFor="Booking-Modal" 
+            className='btn border-0 mt-3 cursor-pointer bg-primary py-[9px] w-full rounded-md text-lg tracking-wide text-[#fff]'
+            >
+              Book Now
+            </label>
+          </Link>
       </div>
     </div>
   );
 };
 
-export default SingleCart;
+export default SingleAdvertiseProduct;

@@ -12,7 +12,9 @@ const Banner = () => {
             <h1 className="text-[25px] lg:text-[40px] leading-[50px] lg:max-w-md font-bold tracking-wide">Find your Best Car rental with easy way</h1>
             <p className="py-3 lg:py-6 lg:max-w-md">Drive performance and your cross-functional collaboration with easy-to-use dashboards, data visualizations, and automated insights in one click</p>
             <div className='flex space-x-2'>
-              <SmallFillButton>Booking Now</SmallFillButton>
+            <a href="#homePageServices">
+              <SmallFillButton href='#homePageServices'>Booking Now</SmallFillButton>
+            </a>
             </div>
           </article>
         </div>

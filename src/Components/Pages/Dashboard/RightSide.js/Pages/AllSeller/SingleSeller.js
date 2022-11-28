@@ -6,7 +6,6 @@ const SingleSeller = ({seller, refetch}) => {
   const { verification, name, email, _id } = seller;
 
   const handleVarified = id =>{
-    console.log(id);
     fetch(`http://localhost:5000/user/${id}`, {
       method: 'PUT',
     })

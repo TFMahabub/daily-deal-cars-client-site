@@ -10,6 +10,7 @@ const Product = () => {
   const { user, loading } = useContext(AuthContext)
   const [openModal, setOpenModal] = useState(null)
   const [selectedItem, setSelectedItem] = useState('')
+
   //get params query:
   const { id } = useParams()
   const { data: products, isLoading } = useQuery({
@@ -32,6 +33,7 @@ const Product = () => {
         products.map(product=> 
           <SingleCart 
             key={product._id}
+            user={user}
             product={product}
             setOpenModal={setOpenModal}
             setSelectedItem={setSelectedItem}

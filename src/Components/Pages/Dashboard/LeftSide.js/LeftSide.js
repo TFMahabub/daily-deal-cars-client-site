@@ -41,6 +41,9 @@ const LeftSide = () => {
           <Link to='/dashboard/all_buyers'>
             <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center'>All Buyers</h4>
           </Link>
+          <Link to='/dashboard/reported_items'>
+            <h4 className='w-full py-3 rounded-lg hover:bg-slate-200 cursor-pointer text-center'>Reported Items</h4>
+          </Link>
         </>
       }
     </div>
