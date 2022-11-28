@@ -45,10 +45,6 @@ const routers = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path: '/payment',
-        element: <Payment></Payment>
-      },
-      {
         path: '*',
         element: <ErrorPage></ErrorPage>
       }
@@ -86,6 +82,10 @@ const routers = createBrowserRouter([
           {
             path: '/dashboard/all_buyers',
             element: <AllBuyers> </AllBuyers>
+          },
+          {
+            path: '/dashboard/payment/:id',
+            element: <Payment></Payment>
           },
           {
             path: '/dashboard/reported_items',

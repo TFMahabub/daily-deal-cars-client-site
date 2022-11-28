@@ -6,8 +6,8 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
   const { categories_id, brand, name, seller_name, verification, original_price,
           resale_price, years_of_use, location, post_time, img } = product;
 
-    
 
+    const resellPrice = parseFloat(resale_price?.replace(/\$|,/g, ''))
 
 
   return (
@@ -27,7 +27,7 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
             setOpenModal('open')
             setSelectedItem({
               name, 
-              resale_price, 
+              resellPrice, 
               img,
               brand
             })

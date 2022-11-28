@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleOrder = ({order, handleCancel}) => {
-  const {selectedItemImg, modelName, BrandName, reSellPrice, _id } = order;
+  const {selectedItemImg, modelName, BrandName, reSellPrice, _id, paid } = order;
   return (
     <tr>
       <td>
@@ -25,9 +25,16 @@ const SingleOrder = ({order, handleCancel}) => {
       </td>
       <th>
         <button onClick={()=>handleCancel(_id)} className="px-3 py-1 font-normal rounded-lg bg-red-300 hover:bg-red-400 duration-150 text-red-800  mr-2">Cancel</button>
-        <Link to='/payment'>
+       
+       {
+        !paid && 
+        <Link to={`/dashboard/payment/${_id}`}>
           <button className="px-3 py-1 font-normal rounded-lg bg-purple-300 hover:bg-primary duration-150 text-purple-800 hover:text-white">Pay</button>
         </Link>
+       }
+        {
+          paid && <span className='text-white bg-green-700 px-3 py-[2px] rounded-md font-semibold'>Paid</span>
+         }
       </th>
     </tr>
   );
