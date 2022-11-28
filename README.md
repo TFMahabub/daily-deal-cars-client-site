@@ -31,3 +31,7 @@ If you're not login in this website you can see Home, Blog and Login menues.
 
 #### Footer: 
 In this footer you can see the company logo. Also with some menue.
+
+### Admin Login:
+adminEmail: rjmahabub543@gmail.com
+adminPassword: asdf123

@@ -7,6 +7,7 @@ import AllSellers from "../Components/Pages/Dashboard/RightSide.js/Pages/AllSell
 import MyBuyers from "../Components/Pages/Dashboard/RightSide.js/Pages/MyBuyers/MyBuyers";
 import MyOrders from "../Components/Pages/Dashboard/RightSide.js/Pages/MyOrders/MyOrders";
 import MyProducts from "../Components/Pages/Dashboard/RightSide.js/Pages/MyProducts/MyProducts";
+import Payment from "../Components/Pages/Dashboard/RightSide.js/Pages/Payment/Payment";
 import ReportedItem from "../Components/Pages/Dashboard/RightSide.js/Pages/ReportedItem/ReportedItem";
 import WellCome from "../Components/Pages/Dashboard/RightSide.js/Pages/WellCome/WellCome";
 import Home from "../Components/Pages/Home/Home";
@@ -45,7 +46,7 @@ const routers = createBrowserRouter([
       },
       {
         path: '/payment',
-        element: <Blog></Blog>
+        element: <Payment></Payment>
       },
       {
         path: '*',
