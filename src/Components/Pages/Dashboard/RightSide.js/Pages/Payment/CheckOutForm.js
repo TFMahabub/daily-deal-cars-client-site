@@ -5,7 +5,6 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const CheckOutForm = ({ booking }) => {
-  console.log(booking);
   
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
@@ -19,18 +18,17 @@ const CheckOutForm = ({ booking }) => {
   const stripe = useStripe();
   const elements = useElements();
   
-  const {meetingLocation, userEmail, reSellPrice, modelName, userName, BrandName, phone, _id} = booking;
+  const {meetingLocation, userEmail, reSellPrice: price, modelName, userName, BrandName, phone, _id} = booking;
 
-
-  // console.log(booking);
+  const reSellPrice = parseFloat(price?.replace(/\$|,/g, ''))
 
   useEffect(() => {
-    axios.post(`http://localhost:5000/payments/create-payment-intent`, {reSellPrice})
+    axios.post(`https://daily-deal-cars-server-site.vercel.app/payments/create-payment-intent`, {reSellPrice})
       .then(res => {
         console.log('34-', res?.data);
         if (res?.data?.success) {
           setStripeClientSecret(res?.data?.clientSecret);
-          toast.success(`Payment successful for daily-deal-cars`)
+          // toast.success(`Payment successful for daily-deal-cars`)
           setLoading(false)
         }
       })
@@ -101,7 +99,7 @@ const CheckOutForm = ({ booking }) => {
         transactionId: paymentIntent?.id,
       }
 
-      axios.post(`http://localhost:5000/payments`, payment)
+      axios.post(`https://daily-deal-cars-server-site.vercel.app/payments`, payment)
         .then(res => {
           console.log('115', res.data);
           if (res?.data?.data?.insertedId) {

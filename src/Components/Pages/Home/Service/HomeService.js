@@ -6,6 +6,7 @@ import SingleCardService from './SingleCardService';
 
 const HomeService = () => {
 
+  //servicess data fetch
   const {data: services, isLoading} = useQuery({
     queryKey: ['services'],
     queryFn: async()=>{

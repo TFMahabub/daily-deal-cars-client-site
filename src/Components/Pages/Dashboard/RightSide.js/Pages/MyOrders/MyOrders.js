@@ -17,7 +17,6 @@ const MyOrders = () => {
       return data;
     }
   })
-  console.log(orders);
   //item delete method
   const handleCancel = id =>{
     if(window.confirm("Do you want to delete the Product?") === true){
