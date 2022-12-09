@@ -51,6 +51,7 @@ const Register = () => {
     })  
   }
 
+  //post method for user in mongoDB
   const fetchFunction = (name, email, userCategory) =>{
     const user = {
       name,
