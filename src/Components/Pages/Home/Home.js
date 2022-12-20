@@ -6,7 +6,7 @@ import IconSection from './IconSection/IconSection';
 import HomeService from './Service/HomeService';
 
 const Home = () => {
-  const [user, seUser] = useState
+  // const [user, seUser] = useState
   return (
     <div className=''>
       <Banner></Banner>

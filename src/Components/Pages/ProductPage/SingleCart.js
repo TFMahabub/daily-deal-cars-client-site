@@ -4,9 +4,9 @@ import { HiBadgeCheck } from "react-icons/hi";
 const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
 
   const { categories_id, brand, name, seller_name, verification, original_price,
-          resale_price, years_of_use, location, post_time, img } = product;
+          resale_price, years_of_use, location, post_time, img, color } = product;
 
-
+console.log(color)
 
 
   return (
@@ -18,6 +18,7 @@ const SingleCart = ({product, setSelectedItem, setOpenModal}) => {
           <h3>Post at: <span className='text-primary'>{post_time}</span></h3>
           <h3>Location: {location}</h3>
           <h3>{years_of_use} used</h3>
+          <h3>{color}</h3>
           <h3>Original Price: <span className='text-primary'>{original_price}</span></h3>
           <h3>Resell Price <span className='text-primary'>{resale_price}</span></h3>
 
