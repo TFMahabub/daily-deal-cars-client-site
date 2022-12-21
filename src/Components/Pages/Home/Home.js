@@ -8,7 +8,7 @@ import HomeService from './Service/HomeService';
 const Home = () => {
   // const [user, seUser] = useState
   return (
-    <div className=''>
+    <div className='px-3 lg:px-0'>
       <Banner></Banner>
       <IconSection></IconSection>
       <HomeService></HomeService>
